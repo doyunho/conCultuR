@@ -1,0 +1,64 @@
+url: https://doyunho.github.io/conCultuR/
+template:
+  bootstrap: 5
+home:
+  title: conCultuR
+  description: Reproducible measurement framework for conservation culturomics and biodiversity attention.
+navbar:
+  structure:
+    left: [intro, reference, articles]
+    right: [github]
+articles:
+  - title: Core workflows
+    contents:
+      - getting-started
+      - case-study-attention-gap
+      - campaign-diagnostics
+  - title: Live data and interpretation
+    contents:
+      - live-data-workflow
+      - ethics-and-interpretation
+reference:
+  - title: Dictionary and ambiguity
+    contents:
+      - make_concept_dictionary
+      - expand_common_names
+      - translate_concepts
+      - score_ambiguity
+      - audit_queries
+      - validate_queries
+  - title: Data collection
+    contents:
+      - collect_attention
+      - get_wiki_attention
+      - get_gdelt_attention
+      - get_google_attention
+      - diagnose_google_trends
+      - check_live_dependencies
+      - platform_coverage
+      - filter_platform_overlap
+  - title: Attention metrics
+    contents:
+      - standardise_attention
+      - standardize_attention
+      - attention_index
+      - query_sensitivity
+      - attention_gap
+      - attention_gap_sensitivity
+      - decompose_seasonality
+      - detect_bursts
+  - title: Campaign and narrative diagnostics
+    contents:
+      - campaign_effect
+      - narrative_frame
+      - sentiment_by_concept
+      - extract_narratives
+  - title: Plotting
+    contents:
+      - starts_with("plot_")
+  - title: Reporting and ethics
+    contents:
+      - culturomic_report
+      - write_culturomic_report
+      - ethics_check
+      - platform_terms_report

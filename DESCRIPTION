@@ -1,0 +1,27 @@
+Package: conCultuR
+Title: Measurement Framework for Conservation Culturomics and Biodiversity Attention
+Version: 0.8.6
+Authors@R: c(
+    person("Yuno", "Do", email = "doyunho@gmail.com", role = c("aut", "cre"))
+  )
+Description: Implements a reproducible measurement framework for conservation culturomics. The package helps users construct biodiversity concept dictionaries, audit query ambiguity, collect or simulate digital attention traces from heterogeneous platforms, standardise platform-specific signals, estimate biodiversity attention indices, quantify attention gaps relative to threat status, diagnose platform disagreement and query sensitivity, evaluate campaign-associated attention deviations, and summarise narrative frames. The package is designed as a methodological workflow for transparent biodiversity-attention measurement rather than as a single-platform application programming interface wrapper.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: R (>= 4.1.0)
+Imports:
+    stats,
+    utils,
+    jsonlite,
+    httr2
+Suggests:
+    gtrendsR,
+    ggplot2,
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+URL: https://github.com/doyunho/conCultuR
+BugReports: https://github.com/doyunho/conCultuR/issues

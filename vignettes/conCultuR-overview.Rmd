@@ -1,0 +1,16 @@
+---
+title: "conCultuR overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{conCultuR overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+`conCultuR` is a measurement framework for conservation culturomics. See the focused vignettes for the main workflows:
+
+- getting started
+- live data workflow
+- attention gap case study
+- campaign diagnostics
+- ethics and interpretation

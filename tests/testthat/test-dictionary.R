@@ -1,0 +1,10 @@
+test_that("dictionary handles synonyms and ambiguity", {
+  taxa <- data.frame(scientific_name = c("Panthera tigris", "Phocoena sinus"), common_name = c("tiger", "vaquita"))
+  dict <- make_concept_dictionary(taxa, languages = "en")
+  dict <- expand_common_names(dict, synonyms = data.frame(scientific_name = "Panthera tigris", synonym = "tiger", stringsAsFactors = FALSE), hashtags = TRUE)
+  dict <- score_ambiguity(dict)
+  expect_true(all(c("query", "query_type", "ambiguity_score") %in% names(dict)))
+  expect_true(any(dict$ambiguity_score > 0, na.rm = TRUE))
+  aud <- audit_queries(dict)
+  expect_true("query_status" %in% names(aud))
+})

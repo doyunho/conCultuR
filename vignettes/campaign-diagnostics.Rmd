@@ -1,0 +1,21 @@
+---
+title: "Campaign diagnostics"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Campaign diagnostics}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Campaign diagnostics estimate attention deviations after a campaign or media date. They should not be described as causal effects unless the study design justifies causal inference.
+
+```{r}
+library(conCultuR)
+ex <- con_culturomics_example_data()
+traces <- collect_attention(score_ambiguity(ex$dictionary), platforms = c("google", "wikipedia"), from = "2024-01-01", to = "2024-06-30", mock = TRUE)
+idx <- attention_index(standardise_attention(traces), min_platforms = 1)
+ce <- campaign_effect(attention = idx, treated_concepts = unique(idx$concept_id)[1], campaign_date = as.Date("2024-04-01"), pre_days = 30, post_days = 30, placebo_n = 20)
+ce[c("average_post_effect", "standardised_average_post_effect", "placebo_p_value")]
+```
+
+The recommended wording is "campaign-associated attention deviation" rather than "campaign effect" when using opportunistic digital traces.

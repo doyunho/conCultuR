@@ -1,0 +1,26 @@
+---
+title: "Ethics and interpretation"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Ethics and interpretation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Digital traces are behavioural, cultural, linguistic, and platform-mediated signals. They can reflect media events, internet access, language dominance, bots, search-engine policy, and platform demographics.
+
+```{r}
+library(conCultuR)
+platform_terms_report(c("google", "wikipedia", "gdelt"))
+ethics_check(data.frame(platform = c("wikipedia", "gdelt")), platforms = c("wikipedia", "gdelt"))
+```
+
+Minimum reporting checklist:
+
+- query dictionary
+- query ambiguity audit
+- platform coverage
+- standardisation method
+- collection date and platform terms
+- distinction between public attention and conservation value
+- whether raw text or user-level data were collected

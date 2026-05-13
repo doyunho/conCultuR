@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj.user$
+^README_files$
+^doc$
+^Meta$
+^cran-comments\.md$
+^\.github$
+^pkgdown$
+
+^_pkgdown\.yml$
+^CONTRIBUTING\.md$

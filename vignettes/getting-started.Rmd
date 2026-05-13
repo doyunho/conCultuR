@@ -1,0 +1,43 @@
+---
+title: "Getting started with conCultuR"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Getting started with conCultuR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+`conCultuR` turns digital traces into auditable biodiversity-attention metrics. The basic workflow is dictionary construction, query ambiguity audit, data collection or simulation, platform standardisation, attention-index estimation, and attention-gap interpretation.
+
+The offline workflow is designed to run without internet access.
+
+```{r}
+library(conCultuR)
+ex <- con_culturomics_example_data()
+dict <- score_ambiguity(ex$dictionary)
+head(audit_queries(dict))
+```
+
+```{r}
+traces <- collect_attention(
+  dict,
+  platforms = c("google", "wikipedia", "reddit"),
+  from = "2024-01-01",
+  to = "2024-02-15",
+  mock = TRUE
+)
+traces_std <- standardise_attention(traces)
+idx <- attention_index(traces_std, min_platforms = 1)
+head(idx)
+```
+
+```{r}
+gap <- attention_gap(idx, ex$conservation_status)
+gap
+```
+
+The attention gap is a communication metric. It is not a substitute for ecological risk assessment, population monitoring, or conservation priority setting.

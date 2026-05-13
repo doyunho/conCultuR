@@ -1,0 +1,12 @@
+test_that("narrative and report outputs are stable", {
+  txt <- data.frame(concept_id = c("a", "a", "b"), text = c("poaching threat", "cute recovery story", "unknown words"), stringsAsFactors = FALSE)
+  nf <- narrative_frame(txt, text_col = "text")
+  expect_true(all(c("dominant_frame", "frame_confidence") %in% names(nf)))
+  se <- sentiment_by_concept(txt, text_col = "text")
+  expect_true("sentiment_index" %in% names(se))
+  ex <- con_culturomics_example_data()
+  tr <- collect_attention(score_ambiguity(ex$dictionary), platforms = c("google", "wikipedia"), from = "2024-01-01", to = "2024-01-31", mock = TRUE)
+  gap <- attention_gap(attention_index(standardise_attention(tr), min_platforms = 1), ex$conservation_status)
+  rep <- culturomic_report(gap)
+  expect_true(is.character(rep))
+})

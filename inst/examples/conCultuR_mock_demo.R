@@ -1,0 +1,7 @@
+library(conCultuR)
+ex <- con_culturomics_example_data()
+dict <- score_ambiguity(ex$dictionary)
+traces <- collect_attention(dict, platforms = c("google", "wikipedia", "reddit"), from = "2024-01-01", to = "2024-03-31", mock = TRUE)
+idx <- attention_index(standardise_attention(traces), min_platforms = 1)
+gap <- attention_gap(idx, ex$conservation_status)
+print(gap)
