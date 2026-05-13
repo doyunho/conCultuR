@@ -1,5 +1,5 @@
 # conCultuR
-
+[![R-CMD-check](https://github.com/doyunho/conCultuR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/doyunho/conCultuR/actions/workflows/R-CMD-check.yaml)
 `conCultuR` is an R package for **conservation culturomics**, the use of digital traces to study public attention to biodiversity, species, habitats, conservation issues, and campaigns. The package is designed as a **measurement framework** rather than a single API wrapper.
 
 The central purpose is to make biodiversity-attention analysis reproducible, auditable, and interpretable. In practice, this means that `conCultuR` does not only retrieve Google Trends, Wikimedia, or news data. It also records how queries were defined, scores query ambiguity, standardises platform-specific signals, estimates concept-level attention, evaluates platform disagreement, quantifies attention gaps relative to conservation status, and diagnoses campaign-associated changes.
