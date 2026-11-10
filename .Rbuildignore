@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj.user$
+^README_files$
+^doc$
+^Meta$
+^\.github$
+^pkgdown$
+^_pkgdown\.yml$
+^Rplots\.pdf$
+^paper$

@@ -1,0 +1,6 @@
+collected 2026-11-07 18:08:14 KST
+date_from 2026-08-01
+date_to 2026-11-02
+google_anchor_keyword endangered species
+conCultuR_version 0.9.0
+gtrendsR_version 1.5.2

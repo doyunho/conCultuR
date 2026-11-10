@@ -1,0 +1,24 @@
+---
+title: "Attention gap case study"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Attention gap case study}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+The attention-gap workflow compares public attention with a conservation-status scale. It is best interpreted as a communication-priority diagnostic.
+
+```{r}
+library(conCultuR)
+ex <- con_culturomics_example_data()
+dict <- score_ambiguity(ex$dictionary)
+traces <- collect_attention(dict, platforms = c("google", "wikipedia"), from = "2024-01-01", to = "2024-03-31", mock = TRUE)
+idx <- attention_index(standardise_attention(traces), min_platforms = 1)
+gap <- attention_gap(idx, ex$conservation_status)
+gap_sens <- attention_gap_sensitivity(idx, ex$conservation_status)
+head(gap)
+head(gap_sens)
+```
+
+A strong result should be visible in both the default classification and the sensitivity grid. A concept that appears only under one threshold setting should be described as a weak or near-threshold candidate.

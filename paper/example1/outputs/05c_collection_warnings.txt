@@ -1,0 +1,1 @@
+GDELT DOC API timelines cover roughly the last three months. Dates before 2026-08-09 are likely to return no articles.

@@ -1,0 +1,37 @@
+---
+title: "Live data workflow"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Live data workflow}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+`conCultuR` can collect Wikimedia Pageviews, GDELT DOC timelines, and Google Trends when the user's local environment allows it. Live calls are not evaluated in this vignette because APIs and rate limits can change.
+
+```{r, eval=FALSE}
+library(conCultuR)
+real <- con_culturomics_real_example_data()
+
+check_live_dependencies(c("wikipedia", "gdelt", "google"))
+diagnose_google_trends("conservation", time = "today 1-m", gprop = "web")
+
+traces <- collect_attention(
+  real$dictionary,
+  platforms = c("wikipedia", "gdelt", "google"),
+  from = Sys.Date() - 75,
+  to = Sys.Date() - 3,
+  mock = FALSE,
+  continue_on_error = TRUE,
+  max_queries_per_concept = 1,
+  platform_args = list(
+    gdelt = list(mode = "timelinevolraw", fill_missing_zero = TRUE),
+    google_trends = list(batch = FALSE, fallback_single = TRUE, sleep = 3, geo = "", time = "today 1-m", gprop = "web")
+  )
+)
+
+coverage <- platform_coverage(traces)
+idx <- attention_index(standardise_attention(traces), min_platforms = 1)
+```
+
+For reproducible manuscripts, save the raw trace table, the query dictionary, the platform coverage summary, and the full collection plan. If platforms have different date coverage, report the `n_platforms` distribution in the attention index.

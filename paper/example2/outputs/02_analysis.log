@@ -1,0 +1,11 @@
+          treated_concept               event_label event_date pre_days
+1 biodiversity_convention CBD COP17 Leaders' Summit 2026-10-16       14
+  post_days n_pre_days n_post_days pre_fit_r2  pre_rmse average_post_effect
+1        14         14          15  0.7516366 0.1435489           0.1278843
+  cumulative_post_effect standardised_average_post_effect placebo_n_used
+1               1.918264                        0.8584697             48
+  placebo_effect_mean placebo_effect_sd placebo_alternative placebo_p_value
+1         -0.04823429         0.1216819             greater       0.1020408
+  placebo_p_value_two_sided min_attainable_p
+1                 0.3877551       0.02040816
+[1] "Only 48 distinct placebo dates are available (placebo_n = 100); all are used once. The smallest attainable placebo p-value is 0.0204."

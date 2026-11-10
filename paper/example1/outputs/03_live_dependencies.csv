@@ -1,0 +1,4 @@
+"platform","required_package","required_package_installed","optional_package","optional_package_installed","api_key_envvar","api_key_available","install_hint"
+"wikipedia","jsonlite",TRUE,"httr2",TRUE,NA,NA,"ready"
+"gdelt","jsonlite",TRUE,"httr2",TRUE,NA,NA,"ready"
+"google_trends","gtrendsR",TRUE,NA,NA,NA,NA,"ready"

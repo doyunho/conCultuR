@@ -1,0 +1,24 @@
+
+high_threat_low_attention              intermediate low_threat_high_attention 
+                        6                        10                         2 
+          concept_id        common_name status attention_percentile
+3             kakapo             kakapo     CR           0.02777778
+2        javan_rhino        Javan rhino     CR           0.08333333
+6 sumatran_orangutan Sumatran orangutan     CR           0.19444444
+1   hawksbill_turtle   hawksbill turtle     CR           0.30555556
+5              saola              saola     CR           0.36111111
+4   philippine_eagle   Philippine eagle     CR           0.41666667
+  attention_gap_score high_threat_low_attention_fraction
+3           0.7500000                               0.75
+2           0.6944444                               0.75
+6           0.5833333                               0.75
+1           0.4722222                               0.50
+5           0.4166667                               0.25
+4           0.3611111                               0.25
+  robust_high_threat_low_attention
+3                             TRUE
+2                             TRUE
+6                             TRUE
+1                             TRUE
+5                            FALSE
+4                            FALSE

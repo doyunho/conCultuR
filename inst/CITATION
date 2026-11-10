@@ -1,0 +1,10 @@
+bibentry(
+  bibtype = "Manual",
+  header = "To cite conCultuR in publications, use:",
+  title = "conCultuR: A measurement framework for conservation culturomics and biodiversity attention",
+  author = c(person("Yuno", "Do")),
+  year = "2026",
+  note = "R package version 0.9.0",
+  url = "https://github.com/doyunho/conCultuR",
+  textVersion = "Do Y (2026). conCultuR: A measurement framework for conservation culturomics and biodiversity attention. R package version 0.9.0."
+)

@@ -1,0 +1,1 @@
+Only 48 distinct placebo dates are available (placebo_n = 100); all are used once. The smallest attainable placebo p-value is 0.0204.

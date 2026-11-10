@@ -1,0 +1,19 @@
+test_that("attention gap handles DD and missing status", {
+  ex <- con_culturomics_example_data()
+  tr <- collect_attention(score_ambiguity(ex$dictionary), platforms = c("google", "wikipedia"), from = "2024-01-01", to = "2024-02-15", mock = TRUE)
+  idx <- attention_index(standardise_attention(tr), min_platforms = 1)
+  gap <- attention_gap(idx, ex$conservation_status)
+  expect_s3_class(gap, "culturomic_gap")
+  expect_true(all(c("attention_gap_score", "attention_gap_class") %in% names(gap)))
+  sens <- attention_gap_sensitivity(idx, ex$conservation_status)
+  expect_true("high_threat_low_attention_fraction" %in% names(sens))
+})
+
+test_that("attention gap warns when high- and low-threat ranges overlap", {
+  ex <- con_culturomics_example_data()
+  tr <- collect_attention(score_ambiguity(ex$dictionary), platforms = c("google", "wikipedia"), from = "2024-01-01", to = "2024-02-15", mock = TRUE)
+  idx <- attention_index(standardise_attention(tr), min_platforms = 1)
+  expect_warning(attention_gap(idx, ex$conservation_status, high_threat = 0.3), "ranges overlap")
+  expect_no_warning(attention_gap(idx, ex$conservation_status, high_threat = 0.5))
+  expect_no_warning(attention_gap(idx, ex$conservation_status))
+})

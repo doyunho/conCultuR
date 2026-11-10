@@ -1,0 +1,7 @@
+"concept_id","common_name","status","attention_percentile","attention_gap_score","high_threat_low_attention_fraction","robust_high_threat_low_attention"
+"kakapo","kakapo","CR",0.0277777777777778,0.75,0.75,TRUE
+"javan_rhino","Javan rhino","CR",0.0833333333333333,0.694444444444444,0.75,TRUE
+"sumatran_orangutan","Sumatran orangutan","CR",0.194444444444444,0.583333333333333,0.75,TRUE
+"hawksbill_turtle","hawksbill turtle","CR",0.305555555555556,0.472222222222222,0.5,TRUE
+"saola","saola","CR",0.361111111111111,0.416666666666667,0.25,FALSE
+"philippine_eagle","Philippine eagle","CR",0.416666666666667,0.361111111111111,0.25,FALSE

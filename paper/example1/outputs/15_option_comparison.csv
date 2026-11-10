@@ -1,0 +1,10 @@
+"setting","n_high_threat_low_attention","n_low_threat_high_attention","high_threat_low_attention","tiger_percentile"
+"defaults",6,2,"kakapo; Javan rhino; Sumatran orangutan; hawksbill turtle; saola; Philippine eagle",0.694
+"use_ambiguity = FALSE",6,2,"kakapo; Javan rhino; Sumatran orangutan; hawksbill turtle; saola; Philippine eagle",0.694
+"aggregate = ""flat""",6,2,"kakapo; Javan rhino; Sumatran orangutan; hawksbill turtle; saola; Philippine eagle",0.694
+"method = ""zscore""",6,2,"kakapo; Javan rhino; Sumatran orangutan; hawksbill turtle; saola; Philippine eagle",0.639
+"without Wikipedia",5,2,"Javan rhino; Sumatran orangutan; saola; hawksbill turtle; Philippine eagle",0.528
+"without GDELT",7,2,"kakapo; Sumatran orangutan; Javan rhino; hawksbill turtle; saola; Philippine eagle; black rhino",0.694
+"without Google Trends",7,2,"kakapo; Javan rhino; saola; Sumatran orangutan; hawksbill turtle; Philippine eagle; vaquita",0.75
+"high_threat = 0.3 (CR and EN)",6,6,"kakapo; Javan rhino; Sumatran orangutan; hawksbill turtle; saola; Philippine eagle",0.694
+"percentile_method = ""rank_n""",6,2,"kakapo; Javan rhino; Sumatran orangutan; hawksbill turtle; saola; Philippine eagle",0.722

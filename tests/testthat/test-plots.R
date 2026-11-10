@@ -1,0 +1,11 @@
+test_that("plot functions tolerate core outputs", {
+  skip_if_not_installed("ggplot2")
+  ex <- con_culturomics_example_data()
+  tr <- collect_attention(score_ambiguity(ex$dictionary), platforms = c("google", "wikipedia"), from = "2024-01-01", to = "2024-01-31", mock = TRUE)
+  st <- standardise_attention(tr)
+  idx <- attention_index(st, min_platforms = 1)
+  gap <- attention_gap(idx, ex$conservation_status)
+  expect_s3_class(plot_attention_gap(gap, label_table = ex$label_table), "ggplot")
+  expect_s3_class(plot_attention_timeseries(idx, label_table = ex$label_table, time_unit = "week"), "ggplot")
+  expect_s3_class(plot_query_ambiguity(score_ambiguity(ex$dictionary)), "ggplot")
+})
